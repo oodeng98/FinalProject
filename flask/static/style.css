@@ -1,0 +1,330 @@
+/* ----------공통---------- */
+/*--------------------------*/
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    height: 3000px;
+    
+    background-color: #fafafa;
+    z-index: 0;
+}
+
+/* ---------상단 nav--------- */
+/*---------------------------*/
+#nav_container {
+    position: fixed;
+
+    top: 0;
+    width: 100%;
+    height: 60px;
+
+    border: 1px solid #ededed;
+    background-color: #ffffff;
+
+    z-index: 100;
+}
+#nav_small_container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1030px;
+    height: 100%;
+}
+.nav_box{
+    position: relative;
+    width: 33.33333%;
+    height: 100%;
+}
+.nav_box.box_1{
+    width: 30%;
+    height: 34px;
+}
+.nav_box.box_1 img{
+    height: 100%;
+}
+.nav_box.box_1 img:hover{
+    cursor: pointer;
+}
+.nav_box.box_2{
+    position: relative;
+    display: flex;
+
+    width: 268px;
+    height: 38px;
+    align-items: center;
+
+    padding-top: 1px;
+    border-radius: 8px;
+    margin-top: 1.5px;
+}
+.nav_box.box_2 input{
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    border: none;
+
+    margin-top: 2.5px;
+    padding: 3px 5px 1px 40px;
+    background-color: rgb(239,239,239);
+
+    font-size: 16px;
+    color: rgb(38,38,38);
+
+    background-image: url(../static/img/glass.png);
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: 17px center;
+
+    border-radius: 8px;
+    z-index: 100;
+}
+.nav_box.box_2 input:focus{
+    padding: 3px 5px 1px 18px;
+    outline: none;
+}
+.search_cancle{
+    position: absolute;
+    display: none;
+    right: 15px;
+    margin-top: 4px;
+
+    width: 12px;
+    height: 12px;
+
+    background-color: lightgrey;
+    border-radius: 50%;
+    overflow: hidden;
+
+    z-index: 200;
+}
+.search_cancle a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.search_cancle img {
+    width: 100%;
+}
+
+.search_cancle:hover{
+    cursor: pointer;
+}
+
+.nav_box.box_3{
+    height: 30px;
+}
+
+.nav_box.box_3 .nav_box3_small{
+    position: absolute;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 73%;
+    height: 100%;
+    right: 0;
+
+}
+.nav_box.box_3 .nav_box3_small div{
+    position: relative;
+    width:24px;
+    height: 24px; 
+}
+.nav_box.box_3 .nav_box3_small div a{
+    position: absolute;
+}
+.nav_box.box_3 .nav_box3_small div img {
+    width: 100%;
+}
+.nav_box.box_3 .nav_box3_small div img:hover {
+    cursor: pointer;
+}
+.nav_box.box_3 .nav_box3_small div:nth-child(6){
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* ---------content 부분--------- */
+/*-------------------------------*/
+.content_box{
+    position: absolute;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 60px;
+
+    width: 830px;
+    height: 3000px;
+
+    background-color: antiquewhite;
+}
+/* content 왼쪽 */
+#content_left{
+    position: relative;
+    display: block;
+    margin: 25px 0px 0px 0px;
+
+    width: 468px;
+    height: 1000px;
+
+    background-color: aqua;
+}
+
+
+/* 스토리 */
+#content_left #story_container{
+    position: relative;
+
+    width: 100%;
+    height: 117px;
+    border: 1px solid rgb(219,219,219);
+    border-radius: 8px;
+    
+    background-color: rgb(255,255,255);
+    overflow: hidden;
+
+    z-index: 100;
+}
+/* 스토리 좌우 이동 버튼 */
+#content_left #story_container .story_button{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+}
+#content_left #story_container .story_button img{
+    width: 100%;
+}
+#content_left #story_container .story_button.left_button{
+    display: none;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    z-index: 200;
+}
+#content_left #story_container .story_button.right_button{
+    display: none;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+    z-index: 200;
+}
+
+/* 스토리 내부 박스 */
+#content_left .story_viewer{
+    position: absolute;
+
+    left : 0;
+
+    height: 100%;
+    display: flex; 
+    /* flex-wrap: nowrap; */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 100%;
+    padding: 0px 15px 0px 15px;
+    transition: 0.7s;
+    
+}
+
+
+/* 개별 스토리 박스 */
+#content_left .story_viewer .story_box{
+    position: relative;
+    display: inline-block;
+    width: 73px;
+    height: 100%;
+    margin-right: 2px;
+}
+#content_left .story_viewer .story_box:last-child{margin-right: 0px;}
+
+
+#content_left .story_viewer .story_box .story_img_box{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 66px;
+    height: 66px;
+    margin-top: 15px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+#content_left .story_viewer .story_box .story_img_box img{
+    position: absolute;
+    cursor:pointer;
+}
+ #content_left .story_viewer .story_box .story_img_box img:first-child{
+    width: 100%;
+}
+#content_left .story_viewer .story_box .story_img_box img:nth-child(2){
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 94%;
+    border: 2.3px solid white;
+    border-radius: 50%;
+} 
+
+#content_left .story_viewer .story_box .story_id_box {
+    position: relative;
+    margin-top: 3px;
+    left: 50%;
+    transform: translate(-50%);
+
+    width: 100%;
+    height: 20px;
+}
+#content_left .story_viewer .story_box .story_id_box span{
+    display: inline-block;
+
+    font-size: 12px;
+    max-width: 100%;
+    letter-spacing: .01em;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+
+
+
+
+/* content 오른쪽 */
+#content_right{
+    position: relative;
+    display: block;
+    margin: 25px 0px 0px 0px;
+
+    width: 300px;
+    height: 1000px;
+
+    background-color: blueviolet
+}
+
+
+
+
+
+
