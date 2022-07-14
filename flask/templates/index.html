@@ -1,7 +1,8 @@
 <html>
     <head>
+        <title>Instagram</title>
         <meta charset="UTF-8">
-        <link href="" rel="shortcut icon" type="image/x-icon">
+        <link href="../static/img/story_border.png" rel="shortcut icon" type="image/x-icon">
         <!-- <link rel="stylesheet" href="{{url_for('static',filename='./style.css')}}"> -->
         <link rel="stylesheet" href="../static/style.css">
         <style>
@@ -35,12 +36,12 @@
                 </div>
             </div>
         </nav>
-        <section class="content_box">
+        <section class="main_content_box">
             <!-- 메인 왼쪽 부분 -->
             <div id="content_left">
                 <!-- 스토리 뷰어 -->
                 <div id="story_container">
-                    <div class="story_button left_button"><img src="../static/img/story_back_button.png" ></div>
+                    <div class="story_button left_button"><img src="../static/img/back_button.png" ></div>
                     <div class="story_viewer">
                             <div class="story_box">
                                 <div class="story_img_box">
@@ -204,12 +205,382 @@
                                 <div class="story_id_box"><span>story viewerer</span></div>
                         </div>
                     </div>
-                    <div class="story_button right_button"><img src="../static/img/story_next_button.png" ></div>
+                    <div class="story_button right_button"><img src="../static/img/next_button.png" ></div>
+                </div>
+                <!-- 게시물 부분 -->
+                <div id="content_container">
+                    <!-- 개별 게시물 -->
+                    <article class = "content_box">
+                        <div>
+                            <!-- 게시물 헤더 -->
+                            <div class="content_header">
+                                <div class="content_header_header">
+                                    <div class="content_header_icon"  href="#">
+                                        <img class="content_story_border" src="../static/img/story_border.png" >
+                                        <img class="content_profile_image" src="../static/img/profile_img.jpg">
+                                    </div>
+                                    <div class="content_header_name"><span><a href="#">dlwlrma</a></span></div>
+                                </div>
+                                <div class="content_header_dots">
+                                    <button><img src="../static/img/dots.png"></button>
+                                </div>
+                            </div>
+                            <!-- 게시물 사진 -->
+                            <div class="content_main">
+                                <div class="content_img">
+                                    <div class="content_back_button"><img src="../static/img/back_button.png"></div>
+                                    <img src="../static/img/content_img.jpg" alt="">
+                                    <div class="content_next_button"><img src="../static/img/next_button.png"></div>
+                                </div>
+                                <div class="content_location">
+                                    <div>
+                                        <img src="../static/img/grey_dot.png">
+                                        <img src="../static/img/blue_dot.png">
+                                        <img src="../static/img/grey_dot.png">
+                                        <img src="../static/img/grey_dot.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 게시글/댓글 -->
+                            <div class="content_text">
+                                <div class="content_icon">
+                                    <div class="content_icon_container">
+                                        <div class="content_icon_left">
+                                            <div><button href="#"><img src="../static/img/heart.png"></button></div>
+                                            <div><button href="#"><img src="../static/img/reply.png"></button></div>
+                                            <div><button href="#"><img src="../static/img/paper_plane.png"></button></div>
+                                        </div>
+                                        <div class="content_icon_right">
+                                            <div><button href="#"><img src="../static/img/save_icon.png"></button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_like">
+                                    <a href="#"><span>좋아요 1018개</span></a>
+                                    <!-- <a href="#"><span>좋아요 {{like_count}}ro</span></a> -->
+                                </div>
+                                <div class="content_text_reply">
+                                    <div class="text_container">
+                                        <div class="text_box">
+                                            <a href="#"><span class="text_box_id">dlwlrma</span></a>
+                                            <span>&nbsp</span>
+                                            <span class="text_box_text">우리 집 고양이 츄르를 좋아해
+                                                우리 집 고양이 츄르를 좋아해
+                                                그래서 두개를 줬더니
+                                                <!-- 우리 집 고양이
+                                                돼지야
+                                                우리 집 고양이 뱃살이 넘 많아
+                                                그래도 츄르는 계속 줘
+                                                그래도 츄르는 계속 줘
+                                                계속 줘 계속 줘
+                                                우리 집 츄르 진짜 많아
+                                                너무 많아서 이제 걍 버려
+                                                니네 집 고양이 먹는거 1년치가
+                                                우리 집 고양이 딱 하루치
+                                                니네 집 고양이 츄르를 좋아해
+                                                우리 집 고양이 츄르를 좋아해
+                                                그래서 뱃살이 계속 쪄
+                                                계속 쪄 계속 쪄</span> -->
+                                                <span>...&nbsp<a onclick="">더 보기</a></span>
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- 댓글 -->
+                                    <div class="reply_box">
+                                        <a href = "#">댓글 95개 모두 보기</a>
+                                    </div>
+                                </div>
+                                <div class="content_time_box"><a href="#">1시간 전</a></div>
+                                <div class="reply_input_container">
+                                    <div class="reply_input_box">
+                                        <form action="#" method="POST">
+                                            <div class="emoji_button">
+                                                <button><img src="../static/img/emoji_button.png"></button>
+                                            </div>
+                                            <textarea name="" class="reply_area" autocomplete="off" autocorrect = "off" placeholder="댓글 달기..."></textarea>
+                                            <button class="text_submit_button">게시</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class = "content_box">
+                        <div>
+                            <!-- 게시물 헤더 -->
+                            <div class="content_header">
+                                <div class="content_header_header">
+                                    <div class="content_header_icon"  href="#">
+                                        <img class="content_story_border" src="../static/img/story_border.png" >
+                                        <img class="content_profile_image" src="../static/img/profile_img.jpg">
+                                    </div>
+                                    <div class="content_header_name"><span><a href="#">dlwlrma</a></span></div>
+                                </div>
+                                <div class="content_header_dots">
+                                    <button><img src="../static/img/dots.png"></button>
+                                </div>
+                            </div>
+                            <!-- 게시물 사진 -->
+                            <div class="content_main">
+                                <div class="content_img">
+                                    <div class="content_back_button"><img src="../static/img/back_button.png"></div>
+                                    <img src="../static/img/content_img.jpg" alt="">
+                                    <div class="content_next_button"><img src="../static/img/next_button.png"></div>
+                                </div>
+                                <div class="content_location">
+                                    <div>
+                                        <img src="../static/img/grey_dot.png">
+                                        <img src="../static/img/blue_dot.png">
+                                        <img src="../static/img/grey_dot.png">
+                                        <img src="../static/img/grey_dot.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 게시글/댓글 -->
+                            <div class="content_text">
+                                <div class="content_icon">
+                                    <div class="content_icon_container">
+                                        <div class="content_icon_left">
+                                            <div><button href="#"><img src="../static/img/heart.png"></button></div>
+                                            <div><button href="#"><img src="../static/img/reply.png"></button></div>
+                                            <div><button href="#"><img src="../static/img/paper_plane.png"></button></div>
+                                        </div>
+                                        <div class="content_icon_right">
+                                            <div><button href="#"><img src="../static/img/save_icon.png"></button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_like">
+                                    <a href="#"><span>좋아요 1018개</span></a>
+                                    <!-- <a href="#"><span>좋아요 {{like_count}}ro</span></a> -->
+                                </div>
+                                <div class="content_text_reply">
+                                    <div class="text_container">
+                                        <div class="text_box">
+                                            <a href="#"><span class="text_box_id">dlwlrma</span></a>
+                                            <span>&nbsp</span>
+                                            <span class="text_box_text">우리 집 고양이 츄르를 좋아해
+                                                우리 집 고양이 츄르를 좋아해
+                                                그래서 두개를 줬더니
+                                                <!-- 우리 집 고양이
+                                                돼지야
+                                                우리 집 고양이 뱃살이 넘 많아
+                                                그래도 츄르는 계속 줘
+                                                그래도 츄르는 계속 줘
+                                                계속 줘 계속 줘
+                                                우리 집 츄르 진짜 많아
+                                                너무 많아서 이제 걍 버려
+                                                니네 집 고양이 먹는거 1년치가
+                                                우리 집 고양이 딱 하루치
+                                                니네 집 고양이 츄르를 좋아해
+                                                우리 집 고양이 츄르를 좋아해
+                                                그래서 뱃살이 계속 쪄
+                                                계속 쪄 계속 쪄</span> -->
+                                                <span>...&nbsp<a onclick="">더 보기</a></span>
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- 댓글 -->
+                                    <div class="reply_box">
+                                        <a href = "#">댓글 95개 모두 보기</a>
+                                    </div>
+                                </div>
+                                <div class="content_time_box"><a href="#">1시간 전</a></div>
+                                <div class="reply_input_container">
+                                    <div class="reply_input_box">
+                                        <form action="#" method="POST">
+                                            <div class="emoji_button">
+                                                <button><img src="../static/img/emoji_button.png"></button>
+                                            </div>
+                                            <textarea name="" class="reply_area" autocomplete="off" autocorrect = "off" placeholder="댓글 달기..."></textarea>
+                                            <button class="text_submit_button">게시</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class = "content_box">
+                        <div>
+                            <!-- 게시물 헤더 -->
+                            <div class="content_header">
+                                <div class="content_header_header">
+                                    <div class="content_header_icon"  href="#">
+                                        <img class="content_story_border" src="../static/img/story_border.png" >
+                                        <img class="content_profile_image" src="../static/img/profile_img.jpg">
+                                    </div>
+                                    <div class="content_header_name"><span><a href="#">dlwlrma</a></span></div>
+                                </div>
+                                <div class="content_header_dots">
+                                    <button><img src="../static/img/dots.png"></button>
+                                </div>
+                            </div>
+                            <!-- 게시물 사진 -->
+                            <div class="content_main">
+                                <div class="content_img">
+                                    <div class="content_back_button"><img src="../static/img/back_button.png"></div>
+                                    <img src="../static/img/content_img.jpg" alt="">
+                                    <div class="content_next_button"><img src="../static/img/next_button.png"></div>
+                                </div>
+                                <div class="content_location">
+                                    <div>
+                                        <img src="../static/img/grey_dot.png">
+                                        <img src="../static/img/blue_dot.png">
+                                        <img src="../static/img/grey_dot.png">
+                                        <img src="../static/img/grey_dot.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 게시글/댓글 -->
+                            <div class="content_text">
+                                <div class="content_icon">
+                                    <div class="content_icon_container">
+                                        <div class="content_icon_left">
+                                            <div><button href="#"><img src="../static/img/heart.png"></button></div>
+                                            <div><button href="#"><img src="../static/img/reply.png"></button></div>
+                                            <div><button href="#"><img src="../static/img/paper_plane.png"></button></div>
+                                        </div>
+                                        <div class="content_icon_right">
+                                            <div><button href="#"><img src="../static/img/save_icon.png"></button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_like">
+                                    <a href="#"><span>좋아요 1018개</span></a>
+                                    <!-- <a href="#"><span>좋아요 {{like_count}}ro</span></a> -->
+                                </div>
+                                <div class="content_text_reply">
+                                    <div class="text_container">
+                                        <div class="text_box">
+                                            <a href="#"><span class="text_box_id">dlwlrma</span></a>
+                                            <span>&nbsp</span>
+                                            <span class="text_box_text">우리 집 고양이 츄르를 좋아해
+                                                우리 집 고양이 츄르를 좋아해
+                                                그래서 두개를 줬더니
+                                                <!-- 우리 집 고양이
+                                                돼지야
+                                                우리 집 고양이 뱃살이 넘 많아
+                                                그래도 츄르는 계속 줘
+                                                그래도 츄르는 계속 줘
+                                                계속 줘 계속 줘
+                                                우리 집 츄르 진짜 많아
+                                                너무 많아서 이제 걍 버려
+                                                니네 집 고양이 먹는거 1년치가
+                                                우리 집 고양이 딱 하루치
+                                                니네 집 고양이 츄르를 좋아해
+                                                우리 집 고양이 츄르를 좋아해
+                                                그래서 뱃살이 계속 쪄
+                                                계속 쪄 계속 쪄</span> -->
+                                                <span>...&nbsp<a onclick="">더 보기</a></span>
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- 댓글 -->
+                                    <div class="reply_box">
+                                        <a href = "#">댓글 95개 모두 보기</a>
+                                    </div>
+                                </div>
+                                <div class="content_time_box"><a href="#">1시간 전</a></div>
+                                <div class="reply_input_container">
+                                    <div class="reply_input_box">
+                                        <form action="#" method="POST">
+                                            <div class="emoji_button">
+                                                <button><img src="../static/img/emoji_button.png"></button>
+                                            </div>
+                                            <textarea name="" class="reply_area" autocomplete="off" autocorrect = "off" placeholder="댓글 달기..."></textarea>
+                                            <button class="text_submit_button">게시</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
 
             <!-- 메인 오른쪽 부분 -->
-            <div id="content_right"></div>
+            <div id="content_right">
+                <!-- 프로필 부분 -->
+                <div class="profile_container">
+                    <div class="profile_box">
+                        <div class="profile_img_box" href ="#"><img src="../static/img/profile_img.jpg"></div>
+                        <div class="profile_id_box">
+                            <div class="profile_id">loud_mbti_i</div>
+                            <div class="profile_nickname">주충</div>
+                        </div>
+                        <div class="profile_change_button"><button>전환</button></div>
+                    </div>
+                </div>
+                <!-- 회원님을 위한 친구 추천 -->
+                <div class="recommend_friends">
+                    <div class="recommend_text_box">
+                        <div class="recommend_text"><span>회원님을 위한 추천</span></div>
+                        <div class="recommend_all_button"><button>모두 보기</button></div>
+                    </div>
+                    <!-- 친구 박스 -->
+                    <div class="recommend_lst_box">
+                        <div class="recommend_box">
+                            <div class="recommend_profile_img"><img src="../static/img/friend_profile.jpg"></div>
+                            <div class="recommend_id_box">
+                                <span class="recommend_id"><a href="#">multi_campus_889</a></span>
+                                <span class="friend_counts">son_seok_goo님 외 20명이 팔로우합니다.</span>
+                            </div>
+                            <div class="main_follow_button"><button>팔로우</button></div>
+                        </div>
+                        <div class="recommend_box">
+                            <div class="recommend_profile_img"><img src="../static/img/friend_profile.jpg"></div>
+                            <div class="recommend_id_box">
+                                <span class="recommend_id"><a href="#">multi_campus_889</a></span>
+                                <span class="friend_counts">son_seok_goo님 외 20명이 팔로우합니다.</span>
+                            </div>
+                            <div class="main_follow_button"><button>팔로우</button></div>
+                        </div>
+                        <div class="recommend_box">
+                            <div class="recommend_profile_img"><img src="../static/img/friend_profile.jpg"></div>
+                            <div class="recommend_id_box">
+                                <span class="recommend_id"><a href="#">multi_campus_889</a></span>
+                                <span class="friend_counts">son_seok_goo님 외 20명이 팔로우합니다.</span>
+                            </div>
+                            <div class="main_follow_button"><button>팔로우</button></div>
+                        </div>
+                        <div class="recommend_box">
+                            <div class="recommend_profile_img"><img src="../static/img/friend_profile.jpg"></div>
+                            <div class="recommend_id_box">
+                                <span class="recommend_id"><a href="#">multi_campus_889</a></span>
+                                <span class="friend_counts">son_seok_goo님 외 20명이 팔로우합니다.</span>
+                            </div>
+                            <div class="main_follow_button"><button>팔로우</button></div>
+                        </div>
+                        <div class="recommend_box">
+                            <div class="recommend_profile_img"><img src="../static/img/friend_profile.jpg"></div>
+                            <div class="recommend_id_box">
+                                <span class="recommend_id"><a href="#">multi_campus_889</a></span>
+                                <span class="friend_counts">son_seok_goo님 외 20명이 팔로우합니다.</span>
+                            </div>
+                            <div class="main_follow_button"><button>팔로우</button></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- info/copyright -->
+                <div class="info_copyright">
+                    <div class="info_menu">
+                        <ul>
+                            <li><a href="#">소개</a></li>
+                            <li><a href="#">도움말</a></li>
+                            <li><a href="#">홍보센터</a></li>
+                            <li><a href="#">API</a></li>
+                            <li><a href="#">채용 정보</a></li><br>
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">약관</a></li>
+                            <li><a href="#">위치</a></li>
+                            <li><a href="#">언어</a></li>
+                        </ul>
+                    </div>
+                    <div class="copyright">
+                        <span>&copy; 2022 ANNOYING-I FROM MULTICAMPUS</span>
+                    </div>
+                </div>
+            </div>
         </section>
     </body>
 

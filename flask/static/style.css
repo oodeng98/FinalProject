@@ -5,14 +5,16 @@
     margin: 0;
     text-decoration: none;
     box-sizing: border-box;
+    list-style: none;
 }
 body{
-    height: 3000px;
-    
     background-color: #fafafa;
     z-index: 0;
 }
-
+a {
+    color: black;
+    text-decoration: none;
+}
 /* ---------상단 nav--------- */
 /*---------------------------*/
 #nav_container {
@@ -136,8 +138,8 @@ body{
     width: 73%;
     height: 100%;
     right: 0;
-
 }
+
 .nav_box.box_3 .nav_box3_small div{
     position: relative;
     width:24px;
@@ -159,7 +161,7 @@ body{
 
 /* ---------content 부분--------- */
 /*-------------------------------*/
-.content_box{
+.main_content_box{
     position: absolute;
     display: flex;
     flex-wrap: nowrap;
@@ -173,20 +175,24 @@ body{
     width: 830px;
     height: 3000px;
 
-    background-color: antiquewhite;
+    /* background-color: antiquewhite;S */
 }
-/* content 왼쪽 */
+/* --------content 왼쪽-------- */
+
 #content_left{
     position: relative;
-    display: block;
+
+    display: flex;
+    flex-direction: column;
+
     margin: 25px 0px 0px 0px;
 
     width: 468px;
-    height: 1000px;
-
-    background-color: aqua;
 }
 
+#content_left::-webkit-scrollbar {
+    display: none; 
+}
 
 /* 스토리 */
 #content_left #story_container{
@@ -243,7 +249,7 @@ body{
 
     height: 100%;
     padding: 0px 15px 0px 15px;
-    transition: 0.7s;
+    transition: 0.5s;
     
 }
 
@@ -306,25 +312,735 @@ body{
     white-space: nowrap;
 }
 
+/* 게시물 콘텐츠 박스 */
+#content_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    z-index: 100;
+}
+
+#content_container .content_box{
+    position: relative;
+    display: block;
+    margin-top: 12px;
+
+    width: 100%;
+
+    border: 1px solid rgb(219,219,219);
+    border-radius: 8px;
+    
+    background-color: rgb(255,255,255);
+    overflow: hidden;
+}
+#content_container .content_box:first-child{
+    margin-top: 16px;
+}
+
+#content_container .content_box .content_header{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+
+    width: 100%;
+    height: 56px;
+
+}
+#content_container .content_box .content_header .content_header_header{
+    position: relative;
+    margin: 8px 4px 8px 12px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+
+    width: 400px;
+    height: 40px;
+
+}
+#content_container .content_box .content_header .content_header_icon{
+    position: relative;
+    margin-right: 6px;
+    width: 39px;
+    height: 39px;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#content_container .content_box .content_header .content_header_icon .content_story_border{
+    position: absolute;
+    width: 100%;
+}
+#content_container .content_box .content_header .content_header_icon .content_profile_image{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    width: 88%;
+
+    border: 2px solid white;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+#content_container .content_box .content_header .content_header_name{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#content_container .content_box .content_header .content_header_dots{
+    position: relative;
+    margin-right: 4px;
+
+    width: 40px;
+    height: 40px;
+
+
+}
+#content_container .content_box .content_header .content_header_dots button{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#content_container .content_box .content_header .content_header_dots button img{
+    width: 50%;
+}
+
+/* 게시물 사진 */
+#content_container .content_box .content_main {
+    position: relative;
+    width: 100%;
+}
+#content_container .content_box .content_main .content_img {
+    position: relative;
+    width: 100%;
+}
+
+#content_container .content_box .content_main .content_img img{
+    width: 100%;
+}
+
+#content_container .content_box .content_main .content_img .content_back_button{
+    position: absolute;
+
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 30px;
+    height: 30px;
+    
+    cursor: pointer;
+
+    opacity: 70%;
+}
+
+#content_container .content_box .content_main .content_img .content_next_button{
+    position: absolute;
+
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+
+    opacity: 70%;
+}
+
+#content_container .content_box .content_main .content_location {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    padding: 16px 0px 16px 0;
+    width: 100%;
+    height: 6px;
+    
+    box-sizing: content-box;
+}
+
+#content_container .content_box .content_main .content_location div{
+    position: relative;
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    box-sizing: content-box;
+}
+
+#content_container .content_box .content_main .content_location div img{
+    height: 100%;
+    margin-right: 4px;
+}
+#content_container .content_box .content_main .content_location div img:last-child{
+    margin-right: 0px;
+}
+
+/* -----게시글과 댓글 창 부분-----*/
+
+/* 좋아요, 댓글, DM, 저장 버튼 */
+#content_container .content_box .content_text{
+    position: relative;
+    width: 100%;
+}
+
+#content_container .content_box .content_text .content_icon{
+    position: relative;
+    margin-top: -34px;
+    width: 100%;
+    height: 40px;
+
+    box-sizing: content-box;
+}
+#content_container .content_box .content_text .content_icon  .content_icon_container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    width: 100%;
+    height: 100%;
+    
+    padding: 0 6px 6px 6px;
+}
+#content_container .content_box .content_text .content_icon .content_icon_left{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+
+    height: 100%;
+    width: 50%;
+}
+
+#content_container .content_box .content_text .content_icon .content_icon_left div{
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+#content_container .content_box .content_text .content_icon .content_icon_left div button{
+    width: 100%;
+    height: 100%;
+
+    padding: 9px;
+
+    cursor: pointer;
+    background-color: rgba(255,255,255,0);
+    border: none;
+}
+
+#content_container .content_box .content_text .content_icon .content_icon_left div button img{
+    height: 100%;
+}
 
 
 
+#content_container .content_box .content_text .content_icon .content_icon_right{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    height: 100%;
+    width: 50%;
+}
+#content_container .content_box .content_text .content_icon .content_icon_right div{
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+#content_container .content_box .content_text .content_icon .content_icon_right div button{
+    width: 100%;
+    height: 100%;
+
+    padding: 8px;
+
+    cursor: pointer;
+    background-color: rgba(255,255,255,0);
+    border: none;
+}
+
+#content_container .content_box .content_text .content_icon .content_icon_right div button img{
+    height: 100%;
+}
+/* 좋아요 갯수 표시 */
+#content_container .content_box .content_text .content_like{
+    position: relative;
+
+    width: 100%;
+    height: 18px;
+
+    margin-bottom: 8px;
+    padding: 0 12px 0 12px;
+
+}
+#content_container .content_box .content_text .content_like span{
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    color: rgb(38, 38, 38);
+}
+
+/* 게시글/댓글 */
+#content_container .content_box .content_text .content_text_reply{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    padding: 0 12px 0 12px;
+
+}
+#content_container .content_box .content_text .content_text_reply .text_container{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: flex-start;
+
+    margin-bottom: 8px;
+}
+
+#content_container .content_box .content_text .content_text_reply .text_container .text_box{
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: flex-start;
+
+    margin-bottom: 8px;
+}
+#content_container .content_box .content_text .content_text_reply .text_container .text_box span{
+    font-size: 14px;
+    color: rgb(38, 38, 38);
+}
+
+#content_container .content_box .content_text .content_text_reply .text_container .text_box .text_box_id{
+    font-weight: 600;
+}
+#content_container .content_box .content_text .content_text_reply .text_container .text_box .text_box_text{
+    font-weight: 400;
+}
+#content_container .content_box .content_text .content_text_reply .text_container .text_box .text_box_text a{
+    color: rgb(142, 142, 142);
+    cursor: pointer;
+}
+
+#content_container .content_box .content_text .content_text_reply .reply_box{
+    position: relative;
+    display:flex;
+    align-items: center;
+    align-content: center;
+
+    width: 100%;
+    height: 18px;
+    margin-bottom: 8px;
+
+}
+#content_container .content_box .content_text .content_text_reply .reply_box a{
+    color: rgb(142, 142, 142);
+}
+
+#content_container .content_box .content_text .content_time_box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 8px;
+
+    width: 100%;
+    height: 18px;
+
+    padding-left: 12px;
+}
+
+#content_container .content_box .content_text .content_time_box a{
+    color: rgb(142, 142, 142);
+    font-size: 10px;
+}
+
+#content_container .content_box .content_text .reply_input_container{ 
+    position: relative;
+    
+    padding:4px 12px 4px 12px;
+
+    width: 100%;
+    height: 49px;
+
+    padding: 4px 12px 4px 12px;
+    border-top: 1px solid rgb(239,239,239);
+}
+
+#content_container .content_box .content_text .reply_input_container .reply_input_box{ 
+    position: relative;
+    
+    width: 100%;
+    height: 100%;
+}
+
+#content_container .content_box .content_text .reply_input_container .reply_input_box form{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
 
 
-/* content 오른쪽 */
+
+#content_container .content_box .content_text .reply_input_container .reply_input_box .emoji_button{ 
+    position: relative;
+    width: 36px;
+    height: 40px;
+
+    padding: 8px 12px 8px 0;
+
+    cursor: pointer;
+}
+
+#content_container .content_box .content_text .reply_input_container .reply_input_box .emoji_button button{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    background-color: rgba(255,255,255,0);
+}
+
+#content_container .content_box .content_text .reply_input_container .reply_input_box .emoji_button button img{
+    width: 100%;
+}
+
+#content_container .content_box .content_text .reply_input_container .reply_input_box form textarea{
+    /* width: 382px; */
+    width: 370px;
+    height: 18px;
+
+    outline: none;
+    max-height: 80px;
+    resize: none;
+    border: none;
+
+    font-size: 14px;
+    color: rgb(38, 38, 38);
+}
+
+#content_container .content_box .content_text .reply_input_container .reply_input_box form .text_submit_button{
+    position: relative;
+
+    width: 28px;
+    height: 18px;
+
+    cursor: pointer;
+    border: none;
+    background-color: rgba(255,255,255,0);
+    opacity: .3;
+
+    line-height: 18px;
+    text-align: center;
+    font-size: 14px;
+    color: rgb(0, 149, 246);
+}
+
+
+
+/* -------content 오른쪽------- */
 #content_right{
     position: relative;
     display: block;
     margin: 25px 0px 0px 0px;
 
-    width: 300px;
-    height: 1000px;
+    width: 319px;
+    height: 800;
 
-    background-color: blueviolet
+}
+
+/* 프로필 */
+
+#content_right .profile_container{
+    position: relative;
+    display: flex;
+
+    width: 100%;
+    height: 66px;
+    margin: 16px 0 10px 0;
+
+}
+
+#content_right .profile_container .profile_box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    margin-right:4px;
+
+}
+
+#content_right .profile_container .profile_box .profile_img_box{
+    position: relative;
+    margin-right: 10px;
+    width: 56px;
+    height: 56px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+    cursor: pointer;
+}
+#content_right .profile_container .profile_box .profile_img_box img{
+    width: 100%;
+}
+
+#content_right .profile_container .profile_box .profile_id_box{
+    position: relative;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 12px;
+}
+#content_right .profile_container .profile_box .profile_id_box .profile_id{
+    font-weight: 600;
+    font-size: 14px;
+    color: rgb(38, 38, 38);
+}
+
+#content_right .profile_container .profile_box .profile_id_box .profile_nickname{
+    color: rgb(142, 142, 142);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+#content_right .profile_container .profile_box .profile_change_button button{
+    background-color: rgba(255,255,255,0);
+    color: rgb(0, 149, 246);
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 600;
+    
+    border: none;
 }
 
 
+/* 친구 추천 및 copyright */
+
+#content_right .recommend_friends{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+
+    width: 100%;
+}
+
+#content_right .recommend_friends .recommend_text_box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 18px;
+
+}
+
+#content_right .recommend_friends .recommend_text_box span{
+    color: rgb(142, 142, 142);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+}
+#content_right .recommend_friends .recommend_text_box button{
+    background-color: rgba(255,255,255,0);
+    border: none;
+    height: 100%;
+    cursor: pointer;
+
+    color: rgb(38, 38, 38);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+    margin: -2px 0 -3px;
+}
+
+#content_right .recommend_lst_box {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 8px 0px;
+}
+#content_right .recommend_lst_box .recommend_box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 10px 8px;
+
+    width: 100%;
+}
+
+#content_right .recommend_lst_box .recommend_box .recommend_profile_img{
+    position: relative;
+
+    width: 32px;
+    height: 32px;
+
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#content_right .recommend_lst_box .recommend_box .recommend_profile_img img{
+    width: 100%;
+}
+
+#content_right .recommend_lst_box .recommend_box .recommend_id_box {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+
+    width: 195px;
+    height: 30px;
+}
+
+#content_right .recommend_lst_box .recommend_box .recommend_id_box .recommend_id{
+    position: relative;
+    display: block;
+
+    font-size: 14px;
+    font-weight: 600;
+    /* line-height: 10px; */
+    color: rgb(0, 55, 107);
+}
+
+#content_right .recommend_lst_box .recommend_box .recommend_id_box .friend_counts{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 5px;
+
+    width: 100%;
+    height: 16px;
+
+    font-size: 12px;
+    line-height: 12px;
+    color: rgb(142, 142, 142);
+}
+
+#content_right .recommend_lst_box .recommend_box .main_follow_button{
+    position: relative;
+
+    width: 36px;
+    height: 16px;
+}
+#content_right .recommend_lst_box .recommend_box .main_follow_button button{
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(255,255,255,0);
+    border: none;
+    cursor: pointer;
+    color: rgb(0, 149, 246);
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 600;
+}
+
+/* copyright */
+
+#content_right .info_copyright{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+#content_right .info_copyright .info_menu{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 16px;
+}
 
 
+#content_right .info_copyright .info_menu li::after{
+    content: " ";
+    width: 1.5px;
+    height: 1.5px;
+    display: inline-block;
+    margin-left: 4px;
+    margin-bottom: 3px;
+    margin-right: -2px;
 
+    background-color: rgb(199, 199, 199);
+    border-radius: 50%
+}
 
+#content_right .info_copyright .info_menu li:last-child::after{
+    content: none;
+}
+
+#content_right .info_copyright .info_menu li{
+    position: relative;
+    display: inline-block;
+
+}
+#content_right .info_copyright .info_menu li a{
+    color: rgb(199, 199, 199);
+    font-size: 12px;
+    line-height: 12px;
+}
+#content_right .info_copyright .info_menu li a:hover{
+    text-decoration: underline;
+}
+
+#content_right .info_copyright .copyright{
+    position: relative;
+    width: 100%;
+}
+#content_right .info_copyright .copyright{
+    color: rgb(199, 199, 199);
+    font-size: 12;
+    font-weight: 400;
+}
