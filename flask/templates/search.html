@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/img/story_border.png" rel="shortcut icon" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="{{url_for('static',filename='./style.css')}}"> -->
+    <!-- <title>#{{keyword}} 해시태그 • Instagram 사진 및 동영상</title> -->
+    <link rel="stylesheet" href="../static/style.css">
+    <title>#바다 해시태그 • Instagram 사진 및 동영상</title>
+</head>
+<body>
+    <!-- 상단 네비 -->
+    <nav id="nav_container">
+    <div id="nav_small_container">
+        <!-- 로고 -->
+        <div class="nav_box box_1">
+            <a href="./"><img src="../static/img/insta_logo.png"></a>
+        </div>
+        <!-- 검색창 -->
+        <div class="nav_box box_2"> 
+            <input type="text" placeholder="검색" id="search_box" value = "{{keyword}}">
+            <div class="search_cancle" onclick="text_cancle()"><img src="../static/img/cancle_button.png"></div>
+            <!-- 키워드 박스 -->
+            <div class="keyword_box">
+                <div class="rhombus"></div>
+                <div class="keyword_outer">
+                </div>
+            </div>
+        </div>
+        <!-- 아이콘들 -->
+        <div class="nav_box box_3">
+            <div class="nav_box3_small">
+                <div><a href = './'><img src="../static/img/home_icon.png"></a></div>
+                <div><a onclick = heart_click()><img src="../static/img/paper_plane.png"></a></div>
+                <div><a onclick = heart_click()><img src="../static/img/plus_icon.png"></a></div>
+                <div><a onclick = heart_click()><img src="../static/img/compass_icon.png"></a></div>
+                <div><a onclick = heart_click()><img src="../static/img/heart.png"></a></div>
+                <div><a onclick = heart_click()><img class="profile_image" src="../static/img/profile_img.jpg"></a></div>
+            </div>
+        </div>
+    </div>
+    </nav>
+    <section>
+        <main id="search_main">
+            <header id="keyword_profile_container">
+                <div class="keyword_profile_box">
+                    <div class="keyword_profile_img"><img class="keyword_profile_img_img" src="../static/img/ocean_img.jpg"></div>
+                    <!-- <div class="keyword_profile_img"><img src="{{main_img}}"></div> -->
+                    <div class="keyword_profile_text_box">
+                        <div class="keyword_profile_name"><span>#바다</span></div>
+                        <div class="keyword_profile_counts"><span>게시물 10,000,000</span></div>
+                        <!-- <div class="keyword_profile_name"><span>#{{keyword}}</span></div>
+                        <div class="keyword_profile_counts"><span>게시물 {{keyword_counts}}</span></div> -->
+                        <div class="keyword_profile_follow">
+                            <button>팔로우</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <article id="search_main_content">
+                <div class="popular_content_container">
+
+                </div>
+                <div class="recently_content_container">
+
+                </div>
+            </article>
+        </main>
+    </section>
+    <script src="../static/search_script.js"></script>
+</body>
+</html>
