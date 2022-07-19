@@ -41,7 +41,8 @@ a {
 
     left: 50%;
     transform: translateX(-50%);
-    width: 1030px;
+    width: 68%;
+    max-width: 1030px;
     height: 100%;
 }
 .nav_box{
@@ -1160,7 +1161,7 @@ a {
 }
 #content_right .info_copyright .copyright{
     color: rgb(199, 199, 199);
-    font-size: 12;
+    font-size: 12px;
     font-weight: 400;
 }
 
@@ -1178,18 +1179,21 @@ a {
     margin-top: 60px;
     width: 100%;
     height: 3000px;
-    background-color: antiquewhite;
 }
 
 /* 키워드 프로필 영역 */
 #keyword_profile_container{
     position: relative;
-    width: 95.7%;
-    height: auto;
+    display: flex;
+    align-items: center;
+
+    width: 95.7vw;
+    height: 15.55vw;
     max-width: 935px;
     max-height: 152px;
+    min-width: 310px;
+    min-height: 50px;
     margin: 30px 20px 44px 20px;
-    background-color: aquamarine;
 }
 
 #keyword_profile_container .keyword_profile_box{
@@ -1197,37 +1201,137 @@ a {
     display: flex;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 #keyword_profile_container .keyword_profile_box .keyword_profile_img{
     position: relative;
     display: flex;
     overflow: hidden;
+    height: 100%;
     max-width: 152px;
     max-height: 152px;
+    min-width: 50px;
+    min-height: 50px;
     border-radius: 50%;
 }
 #keyword_profile_container .keyword_profile_box .keyword_profile_img img{
-    width: 100%;
+    height: 100%;
+}
+
+#keyword_profile_container .keyword_profile_box .keyword_profile_text_container{
+    position: relative;
+    width: 156px;
+    height: 115px;
+    margin-left: 5.4%;
+}
+#keyword_profile_container .keyword_profile_box .keyword_profile_text_container .keyword_profile_text_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+} 
+#keyword_profile_container .keyword_profile_box .keyword_profile_text_container .keyword_profile_text_box .keyword_profile_name{
+    margin-bottom: 12px;
+}
+#keyword_profile_container .keyword_profile_box .keyword_profile_text_container .keyword_profile_text_box .keyword_profile_name span{
+    color: rgb(38, 38, 38);
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 28px;
+}
+
+#keyword_profile_container .keyword_profile_box .keyword_profile_text_container .keyword_profile_text_box .keyword_profile_counts{
+    margin-bottom: 24px;
+}
+#keyword_profile_container .keyword_profile_box .keyword_profile_text_container .keyword_profile_text_box .keyword_profile_counts span{
+    color: rgb(38, 38, 38);
+    font-size: 16px;
+    line-height: 16px;
+}
+
+#keyword_profile_container .keyword_profile_box .keyword_profile_text_container .keyword_profile_text_box .keyword_profile_counts span:first-child{
+    font-weight: 400;
+}
+#keyword_profile_container .keyword_profile_box .keyword_profile_text_container .keyword_profile_text_box .keyword_profile_counts span:nth-child(2){
+    font-weight: 600;
+    
+}
+#keyword_profile_container .keyword_profile_box .keyword_profile_text_container .keyword_profile_text_box .keyword_profile_follow{
+    height: 30px;
+    padding: 5px 9px;
+    background-color: rgb(0, 149, 246);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    text-align: center;
+    line-height: 14px;
+    font-weight: 600;
 }
 
 
-
-
-
-
-
-
-/* 사진 부분 */
+/* ----------------------사진 부분----------------------*/
+/* ----------------------------------------------------*/
 #search_main_content{
     position: relative;
-    width: 95.7%;
+    display: flex;
+    width: 95.7vw;
     max-width: 935px;
-    height: 2500px;
-    background-color: aqua;
 
 }
+#search_main_content .recently_text_box{
+    position: relative;
+    width: 100%;
+    height: 18px;
+    margin-bottom: 16px;
+}
+#search_main_content .recently_text_box span{
+    color: rgb(142, 142, 142);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+}
+#search_main_content .recently_content_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#search_main_content .recently_content_container .recently_img_container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
 
+    margin-bottom: 50px;
 
+    width: 100%;
+    
+}
+
+#search_main_content .recently_content_container .recently_img_container .recently_img_row_box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 30vw;
+    max-height: 293px;
+    margin-bottom: 1.7%;
+}
+#search_main_content .recently_content_container .recently_img_container .recently_img_row_box .recently_img_box{
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    width: 30vw;
+    max-height: 293px;
+    max-width: 293px;
+}
+#search_main_content .recently_content_container .recently_img_container .recently_img_row_box img{
+    width: 100%;
+}
 
 
 
