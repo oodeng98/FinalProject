@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../static/img/story_border.png" rel="shortcut icon" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="{{url_for('static',filename='./style.css')}}"> -->
-    <!-- <title>#{{keyword}} 해시태그 • Instagram 사진 및 동영상</title> -->
-    <link rel="stylesheet" href="../static/style.css">
-    <title>#바다 해시태그 • Instagram 사진 및 동영상</title>
+    <title>#{{keyword}} 해시태그 • Instagram 사진 및 동영상</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}">
 </head>
 <body>
     <!-- 상단 네비 -->
@@ -15,12 +12,12 @@
         <div id="nav_small_container">
             <!-- 로고 -->
             <div class="nav_box box_1">
-                <a href="./"><img src="../static/img/insta_logo.png"></a>
+                <a href="./"><img src="{{url_for('static', filename = 'img/insta_logo.png')}}"></a>
             </div>
             <!-- 검색창 -->
             <div class="nav_box box_2"> 
                 <input type="text" placeholder="검색" id="search_box" value = "{{keyword}}">
-                <div class="search_cancle" onclick="text_cancle()"><img src="../static/img/cancle_button.png"></div>
+                <div class="search_cancle" onclick="text_cancle()"><img src="{{url_for('static', filename = '../static/img/cancle_button.png')}}"></div>
                 <!-- 키워드 박스 -->
                 <div class="keyword_box">
                     <div class="rhombus"></div>
@@ -31,12 +28,13 @@
             <!-- 아이콘들 -->
             <div class="nav_box box_3">
                 <div class="nav_box3_small">
-                    <div><a href = './'><img src="../static/img/home_icon.png"></a></div>
-                    <div><a onclick = heart_click()><img src="../static/img/paper_plane.png"></a></div>
-                    <div><a onclick = heart_click()><img src="../static/img/plus_icon.png"></a></div>
-                    <div><a onclick = heart_click()><img src="../static/img/compass_icon.png"></a></div>
-                    <div><a onclick = heart_click()><img src="../static/img/heart.png"></a></div>
-                    <div><a onclick = heart_click()><img class="profile_image" src="../static/img/profile_img.jpg"></a></div>
+                    <div><a href = './'><img src="{{url_for('static', filename = 'img/home_icon.png')}}"></a></div>
+                    <div><a onclick = heart_click()><img src="{{url_for('static', filename = 'img/paper_plane.png')}}"></a></div>
+                    <div><a onclick = heart_click()><img src="{{url_for('static', filename = 'img/plus_icon.png')}}"></a></div>
+                    <div><a onclick = heart_click()><img src="{{url_for('static', filename = 'img/compass_icon.png')}}"></a></div>
+                    <div><a onclick = heart_click()><img src="{{url_for('static', filename = 'img/heart.png')}}"></a></div>
+                                                                                        <!-- 동적 -->
+                    <div><a onclick = heart_click()><img class="profile_image" src="{{url_for('static', filename = 'img/profile_img.jpg')}}"></a></div>
                 </div>
             </div>
         </div>
@@ -44,15 +42,13 @@
     <section>
         <main id="search_main">
             <header id="keyword_profile_container">
-                <div class="keyword_profile_box">
-                    <div class="keyword_profile_img"><img class="keyword_profile_img_img" src="../static/img/ocean_img.jpg"></div>
-                    <!-- <div class="keyword_profile_img"><img src="{{main_img}}"></div> -->
+                <div class="keyword_profile_box">                                                 <!--동적--> 
+                    <div class="keyword_profile_img"><img class="keyword_profile_img_img" src="{{url_for('static', filename = 'img/ocean_img.jpg')}}"></div>
                     <div class="keyword_profile_text_container">
                         <div class="keyword_profile_text_box">
-                            <div class="keyword_profile_name"><span>#바다</span></div>
+                            <div class="keyword_profile_name"><span id="keyword_profile_name_keyword">#{{keyword}}</span></div>
                             <div class="keyword_profile_counts"><span>게시물</span> <span>10,000,000</span></div>
-                            <!-- <div class="keyword_profile_name"><span>#{{keyword}}</span></div>
-                            <div class="keyword_profile_counts"><span>게시물 {{keyword_counts}}</span></div> -->
+                            <!-- <div class="keyword_profile_counts"><span>게시물 {{keyword_counts}}</span></div> -->
                             <button class="keyword_profile_follow">팔로우</button>
                         </div>
                     </div>
@@ -68,13 +64,13 @@
                     <div class="recently_img_container">
                         <div class="recently_img_row_box">
                             <div class="recently_img_box">
-                                <img src="../static/img/content_img.jpg">
+                                <img src="{{url_for('static', filename = 'img/content_img.jpg')}}">
                             </div>
                             <div class="recently_img_box">
-                                <img src="../static/img/content_img.jpg">
+                                <img src="{{url_for('static', filename = 'img/content_img.jpg')}}">
                             </div>
                             <div class="recently_img_box">
-                                <img src="../static/img/content_img.jpg">
+                                <img src="{{url_for('static', filename = 'img/content_img.jpg')}}">
                             </div>
                         </div>
                         <div class="recently_img_row_box">
@@ -123,11 +119,33 @@
                         </div>
                     </div>
                 </div>
+                <div class="spinning">
+                    <div class="spinner-border text-muted"></div>
+                </div>
+                <div class="bottom_copyright">
+                    <div>
+                        <span>Meta</span>
+                        <span>소개</span>
+                        <span>블로그</span>
+                        <span>채용정보</span>
+                        <span>도움말</span>
+                        <span>API</span>
+                        <span>개인정보처리방침</span>
+                        <span>약관</span>
+                        <span>인기 계정</span>
+                        <span>해시태그</span>
+                        <span>위치</span>
+                        <span>Instagram Lite</span>
+                        <span>연락처 업로드&비사용자</span><br>
+                        <span>&copy;2022 ANNOYING-I FROM MULTICAMPUS</span>
+                    </div>
+                </div>
             </article>
         </main>
     </section>
+    
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="../static/search_script.js"></script>
-    <!-- <script src="../static/index_script.js"></script> -->
+    <script src="{{url_for('static', filename = 'nav.js')}}"></script>
+    <script src="{{url_for('static', filename = 'search_script.js')}}"></script>
 </body>
 </html>

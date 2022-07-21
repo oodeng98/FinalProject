@@ -25,7 +25,7 @@ a {
     top: 0;
     width: 100%;
     height: 60px;
-
+    min-width:  700px;
     border: 1px solid #ededed;
     background-color: #ffffff;
 
@@ -256,6 +256,7 @@ a {
     align-items: center;
 
     width: 73%;
+    min-width: 200px;
     height: 100%;
     right: 0;
 }
@@ -274,7 +275,7 @@ a {
 .nav_box.box_3 .nav_box3_small div img:hover {
     cursor: pointer;
 }
-.nav_box.box_3 .nav_box3_small div:nth-child(6){
+.nav_box.box_3 .nav_box3_small div:last-child{
     border-radius: 50%;
     overflow: hidden;
 }
@@ -387,11 +388,13 @@ a {
 
 #content_left .story_viewer .story_box .story_img_box{
     position: relative;
+
     left: 50%;
     transform: translate(-50%);
     width: 66px;
     height: 66px;
     margin-top: 15px;
+
     overflow: hidden;
     border-radius: 50%;
 }
@@ -1178,7 +1181,6 @@ a {
 
     margin-top: 60px;
     width: 100%;
-    height: 3000px;
 }
 
 /* 키워드 프로필 영역 */
@@ -1277,6 +1279,7 @@ a {
 #search_main_content{
     position: relative;
     display: flex;
+    flex-direction: column;
     width: 95.7vw;
     max-width: 935px;
 
@@ -1305,7 +1308,7 @@ a {
     flex-wrap: wrap;
     align-items: flex-start;
 
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 
     width: 100%;
     
@@ -1319,8 +1322,12 @@ a {
     width: 100%;
     height: 30vw;
     max-height: 293px;
-    margin-bottom: 1.7%;
+    margin-bottom: 2.5%;
 }
+#search_main_content .recently_content_container .recently_img_container .recently_img_row_box:last-child{
+    margin-bottom: 10px;
+}
+
 #search_main_content .recently_content_container .recently_img_container .recently_img_row_box .recently_img_box{
     position: relative;
     display: flex;
@@ -1333,8 +1340,50 @@ a {
     width: 100%;
 }
 
+/* spinning */
+#search_main_content .spinning{
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+
+#search_main_content .spinning div{
+    width: 100%;
+    height: 100%;
+}
 
 
+#search_main_content .bottom_copyright{
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    padding-bottom: 50px;
+}
+#search_main_content .bottom_copyright div{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 85%;
+    height: 100%;
+    padding-top: 15px;
+}
+#search_main_content .bottom_copyright span{
+    color: rgb(199, 199, 199);
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+#search_main_content .bottom_copyright span:last-child{
+    margin: 0;
+}
+#search_main_content .bottom_copyright span:hover{
+    text-decoration: underline;
+}
 
 
 
