@@ -16,11 +16,12 @@ window.addEventListener("scroll", function(){
     var height = Number(main.scrollHeight)
     var height2 = Number(main.scrollTop)
     var height3 = Number(main.clientHeight)
-    if(height - height2 < height3+20){
+    if(height - height2 < height3){
         var recently_img_box = document.getElementsByClassName('recently_img_box')
         var keyword_profile_name_keyword = this.document.getElementById('keyword_profile_name_keyword')
         var num = String(recently_img_box.length)
-        data = {'keyword':keyword_profile_name_keyword.innerText.slice(1), 'num': num}
+        // data = {'keyword':keyword_profile_name_keyword.innerText.slice(1), 'num': num}
+        data = {'keyword':keyword_profile_name_keyword.innerText.slice(1)}
         $.ajax({
             type:"POST",
             contentType: "application/json; charset=utf-8",
@@ -28,7 +29,8 @@ window.addEventListener("scroll", function(){
             data:JSON.stringify(data),
             dataType : "json",
             success: function(image_names){
-                if(Object.keys(image_names) ==0){return}
+                
+                if(Object.keys(image_names) ==0){alert("모든 이미지를 표출했습니다.")}
                 // 검색어 갯수만큼 div 박스 생성, 검색한 텍스트 넣어주기
                 var recently_img_container = document.getElementsByClassName('recently_img_container')[0]
                 for(i = 0; i < Object.keys(image_names).length; i++){
@@ -42,7 +44,8 @@ window.addEventListener("scroll", function(){
                     var img_box = document.createElement("div")
                     var img_ = document.createElement("img")
                     img_box.className = 'recently_img_box'
-                    img_.src = "../static/img/"+Object.values(image_names[i])
+                    // img_.src = "../static/img/"+Object.values(image_names[i])
+                    img_.src = "{{url_for('static', filename = 'test_img/"+ Object.values(image_names[i]) +"'}}"
                     img_box.appendChild(img_)
                     row_box.appendChild(img_box)
                 }
