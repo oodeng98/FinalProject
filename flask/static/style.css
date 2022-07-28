@@ -1216,13 +1216,21 @@ a {
     min-height: 50px;
     border-radius: 50%;
 }
+#keyword_profile_container .keyword_profile_box .keyword_profile_img a{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
 #keyword_profile_container .keyword_profile_box .keyword_profile_img img{
     height: 100%;
+    z-index: 99;
 }
 
 #keyword_profile_container .keyword_profile_box .keyword_profile_text_container{
     position: relative;
-    width: 156px;
+    width: 200px;
     height: 115px;
     margin-left: 5.4%;
 }
@@ -1259,6 +1267,7 @@ a {
     
 }
 #keyword_profile_container .keyword_profile_box .keyword_profile_text_container .keyword_profile_text_box .keyword_profile_follow{
+    width: 156px;
     height: 30px;
     padding: 5px 9px;
     background-color: rgb(0, 149, 246);
@@ -1286,21 +1295,75 @@ a {
 }
 #search_main_content .recently_text_box{
     position: relative;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    height: 18px;
-    margin-bottom: 16px;
+    height: 34px;
 }
 #search_main_content .recently_text_box span{
+    position: relative;
     color: rgb(142, 142, 142);
     font-weight: 600;
     font-size: 14px;
     line-height: 14px;
 }
+#search_main_content .recently_text_box .filter_button_box{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -10px;
+    right: 0px;
+    width: 300px;
+    height: 100%;
+}
+
+#search_main_content .recently_text_box .filter_button_box button{
+    padding: 0px 7px 0px 7px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(0, 149, 246);
+    color: #fafafa;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 14px;
+}
+#search_main_content .recently_text_box .filter_button_box button:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 149, 246);
+    box-shadow: 0px 0px 8px grey;
+    transition: 0.3s;
+}
+#search_main_content .recently_text_box .filter_button_box button.filtering{
+    animation-name: filtering;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: backwards;
+}
+@keyframes filtering{
+    from{
+        background-color: rgb(0, 149, 246);
+        color: rgb(255, 255, 255);
+        border: 2px solid rgb(255, 255, 255);
+    }
+    to{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 149, 246);
+        border: 2px solid rgb(0, 149, 246);
+    }
+}
+
+
+
 #search_main_content .recently_content_container {
     position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 60px;
 }
 #search_main_content .recently_content_container .recently_img_container {
     position: relative;
@@ -1339,20 +1402,44 @@ a {
 #search_main_content .recently_content_container .recently_img_container .recently_img_row_box img{
     width: 100%;
 }
+#search_main_content .recently_content_container .recently_img_container .recently_img_row_box img.x_button{
+    opacity: 1;
+    position: absolute;
+}
 
 /* spinning */
 #search_main_content .spinning{
     position: relative;
+    display: none;
+    justify-content: center;
     width: 100%;
     height: 50px;
+    transition: 2s;
 }
 
-#search_main_content .spinning div{
-    width: 100%;
+#search_main_content .spinning .spinner_box{
+    display:flex;
     height: 100%;
 }
-
-
+#search_main_content .spinning .spinner_box img{
+    width: 40px;
+    height: 40px;
+    margin-top: -30px;
+    animation-name: spinning;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+@keyframes spinning{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+/* copyright */
 #search_main_content .bottom_copyright{
     position: relative;
     display: flex;
