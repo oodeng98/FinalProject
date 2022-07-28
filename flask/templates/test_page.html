@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{url_for('static', filename='../static/img/story_border.png')}}" rel="shortcut icon" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#{{keyword}} 해시태그 • Instagram 사진 및 동영상</title>
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}"> -->
+    <link rel="stylesheet" href="../static/style.css">
+    
+</head>
+<body>
+    <!-- 상단 네비 -->
+    <nav id="nav_container">
+        <div id="nav_small_container">
+            <!-- 로고 -->
+            <div class="nav_box box_1">
+                <a href="./"><img src="{{url_for('static', filename = 'img/insta_logo.png')}}"></a>
+            </div>
+            <!-- 검색창 -->
+            <div class="nav_box box_2"> 
+                <input type="text" placeholder="검색" id="search_box" value = "{{keyword}}">
+                <div class="search_cancle" onclick="text_cancle()"><img src="{{url_for('static', filename = '../static/img/cancle_button.png')}}"></div>
+                <!-- 키워드 박스 -->
+                <div class="keyword_box">
+                    <div class="rhombus"></div>
+                    <div class="keyword_outer">
+                    </div>
+                </div>
+            </div>
+            <!-- 아이콘들 -->
+            <div class="nav_box box_3">
+                <div class="nav_box3_small">
+                    <div><a href = './'><img src="{{url_for('static', filename = 'img/home_icon.png')}}"></a></div>
+                    <div><a onclick = heart_click()><img src="{{url_for('static', filename = 'img/paper_plane.png')}}"></a></div>
+                    <div><a onclick = heart_click()><img src="{{url_for('static', filename = 'img/plus_icon.png')}}"></a></div>
+                    <div><a onclick = heart_click()><img src="{{url_for('static', filename = 'img/compass_icon.png')}}"></a></div>
+                    <div><a onclick = heart_click()><img src="{{url_for('static', filename = 'img/heart.png')}}"></a></div>
+                                                                                        <!-- 동적 -->
+                    <div><a onclick = heart_click()><img class="profile_image" src="{{url_for('static', filename = 'img/profile_img.jpg')}}"></a></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <main id="search_main">
+            <header id="keyword_profile_container">
+                <div class="keyword_profile_box">                                                 
+                    <div class="keyword_profile_img">
+                        <a href="./search?keyword={{keyword}}&status=original">
+                            <img class="keyword_profile_img_img" src="./static/test_img/{{img_names[0][0]}}">
+                        </a>
+                    </div>
+                    <div class="keyword_profile_text_container">
+                        <div class="keyword_profile_text_box">
+                            <div class="keyword_profile_name"><span id="keyword_profile_name_keyword">#{{keyword}}</span></div>
+                            <div class="keyword_profile_counts"><span>게시물</span> <span>{{img_len}}</span></div>
+                            <!-- <div class="keyword_profile_counts"><span>게시물 {{keyword_counts}}</span></div> -->
+                            <button class="keyword_profile_follow">팔로우</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <article id="search_main_content">
+                <!-- 인기 게시물은 나중에 -->
+                <!-- <div class="popular_content_container">
+
+                </div> -->
+                <div class="recently_content_container">
+                    <div class="recently_text_box">
+                        <span>최근 사진</span>
+                        <div class="filter_button_box">
+                                {% if status == "filtering" %}
+                                <a href = "/search?keyword={{keyword}}&status={{status}}"><button class="filter_button filtering">이미지 필터링 중..</button></a>
+                                {% elif status == "original" %}
+                                <a href = "/search?keyword={{keyword}}&status={{status}}"><button class="filter_button">이미지 필터링 사용하기</button></a>
+                                {% endif %}
+                        </div>
+                    </div>
+                    <div class="recently_img_container">
+                       
+                    </div> 
+                </div>
+                <div class="spinning">
+                    <div class="spinner_box">
+                        <img src="../static/img/loading.png">
+                    </div>
+                </div>
+                <div class="bottom_copyright">
+                    <div>
+                        <span>Meta</span>
+                        <span>소개</span>
+                        <span>블로그</span>
+                        <span>채용정보</span>
+                        <span>도움말</span>
+                        <span>API</span>
+                        <span>개인정보처리방침</span>
+                        <span>약관</span>
+                        <span>인기 계정</span>
+                        <span>해시태그</span>
+                        <span>위치</span>
+                        <span>Instagram Lite</span>
+                        <span>연락처 업로드&비사용자</span><br>
+                        <span>&copy;2022 loud_mbti_i FROM MULTICAMPUS</span>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- <script src="{{url_for('static', filename = 'nav.js')}}"></script>
+        <script src="{{url_for('static', filename = 'search_script.js')}}"></script> -->
+    <script>
+        var status= "{{status}}"
+        var mtime = "{{mtime}}"
+        var keyword = "{{keyword}}"
+        var img_names = ("{{img_names}}".replace(/;/g, "").replace(/&#39/g, "").replace(/ /g,'').replace(/\[/g,'').replace(/\]/g,'').split(","))
+    </script>
+    <script src="../static/nav.js"></script>
+    <script src="../static/test_page.js"></script>
+</body>
+</html>
